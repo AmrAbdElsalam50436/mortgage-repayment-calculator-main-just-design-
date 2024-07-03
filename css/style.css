@@ -1,78 +1,98 @@
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
 }
 
 .container {
     background-image: url(images/17973911.jpg);
     background-size: cover;
     background-position: center;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 .calculator-wrapper {
-    width: 60%;
-    height: 450px;
-    background-color: rgba(226, 245, 252, 1);
-    padding: 80px;
-    position: relative;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2), -10px 10px 20px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1200px;
+    background-color: rgba(226, 245, 252, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .calculator {
-    background-color: rgba(254, 254, 255, 1);
-    width: 500px;
+    background-color: #fff;
+    flex: 1;
     padding: 20px;
     border-radius: 15px 0 0 15px;
-    position: absolute;
-    left: 150px;
+    box-sizing: border-box;
+}
+
+.result-b {
+    background-color: #fefefe;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .result {
-    width: 350px;
-    height: 430px;
+    background-color: rgba(18, 48, 65, 0.9);
+    color: #fff;
+    border-radius: 0 0 0 65px;
     padding: 20px;
-    background-color: rgba(18, 48, 65, 1);
-    position: absolute;
-    top: 80px;
-    right: 120px;
-    border-radius: 0 15px 15px 75px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.monthly_repayments {
+    background-color: #0f2430;
+    padding: 20px;
+    border-radius: 8px;
+    border-top: 4px solid #a4b54f;
+    margin-top: 20px;
 }
 
 h3 {
-    color: rgba(18, 48, 65, 1);
+    color: #123043;
+    margin-bottom: 20px;
+    align-self: flex-start;
+    display: inline-block;
+
+}
+
+h4 {
+    color: #f0f0f0;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 label {
     margin-top: 15px;
-    color: rgba(101, 105, 109, 255);
-    display: inline-block;
-    width: 100%;
+    color: #65696d;
     font-size: 16px;
 }
 
-input[type="number"],
-#term,
-#rate {
-    width: 65%;
-    margin-top: 5px;
+input[type="number"] {
+    width: 90%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box;
+    margin-top: 5px;
 }
 
 .form-group {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     gap: 10px;
     margin-top: 10px;
 }
@@ -80,125 +100,108 @@ input[type="number"],
 button[type="submit"] {
     margin-top: 20px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 20px;
-    width: 45%;
-    background-color: rgba(216, 219, 46, 1);
+    background-color: #d8db2e;
+    color: #fff;
     cursor: pointer;
     font-weight: bold;
+    text-align: center;
 }
 
 input[type="reset"] {
     background: none;
     border: none;
+    color: #a3adb3;
     text-decoration: underline;
-    color: rgba(163, 173, 179, 1);
-    position: absolute;
-    right: 200px;
-    top: 40px;
     cursor: pointer;
+    margin-bottom: 20px;
+    align-self: flex-end;
+    display: inline-block;
 }
-
-/* input[type="radio"] {
-    margin: 0 5px;
-} */
 
 .result p {
     margin: 5px 0;
 }
 
-.result-details p {
-    margin: 5px 0;
-}
-
 hr {
     margin: 20px 0;
-    height: 2px;
-    background-color: #203643;
-    border: none;
 }
 
-h4 {
-    color: aliceblue;
-}
-
-.lorem,
-p {
-    color: #999;
-}
-
-.monthly_repayments {
-    background-color: #0f2531;
-    height: 50%;
-    padding: 20px;
-    border-radius: 5px;
-    border-top: rgba(165, 181, 78, 255) 3px solid;
-    margin-top: 30px;
+.lorem {
+    color: #83a4b1;
+    font-size: 14px;
 }
 
 #monthly-repayments {
-    color: rgba(207, 210, 56, 255);
-    font-size: 30px;
+    color: #c7cb44;
+    font-size: 32px;
 }
 
-#total-repay {
-    color: rgba(234, 242, 245, 255);
+#total_repay {
+    color: #dce2e7;
+    font-size: 18px;
+    margin-top: 15px;
 }
-
-@import "compass/css3";
 
 .radio {
-    display: block;
+    display: flex;
+    align-items: center;
     cursor: pointer;
-    user-select: none;
-    text-align: left;
-
-    &+.radio {
-        margin-top: 12px;
-    }
-
-    input {
-        display: none;
-
-        &+span {
-            display: inline-block;
-            position: relative;
-            padding-left: 30px;
-
-            &:before {
-                content: '';
-                display: block;
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                border-radius: 50%;
-                margin-right: 5px;
-                width: 16px;
-                height: 16px;
-                border: 1px solid #ccc;
-                background: #fff;
-            }
-
-            &:after {
-                content: '';
-                display: block;
-                width: 10px;
-                height: 10px;
-                background: #222;
-                position: absolute;
-                border-radius: 50%;
-                top: 3px;
-                left: 3px;
-                opacity: 0;
-                transform: scale(0, 0);
-                transition: all .2s cubic-bezier(0.64, 0.57, 0.67, 1.53);
-            }
-        }
-
-        &:checked+span:after {
-            opacity: 1;
-            transform: scale(1, 1);
-        }
-    }
+    padding: 10px;
+    margin-top: 10px;
 }
 
+.radio input {
+    display: none;
+}
+
+.radio span {
+    position: relative;
+    padding-left: 25px;
+    line-height: 18px;
+    color: #65696d;
+    font-size: 16px;
+}
+
+.radio span:before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #aaac57;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(239, 239, 194, 0.8);
+}
+
+.radio input:checked + span:after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #c2c732;
+    border-radius: 50%;
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+    .calculator-wrapper {
+        flex-direction: column;
+    }
+
+    .calculator, .result-b {
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    .result {
+        border-radius: 15px 15px 0 0;
+    }
+}
